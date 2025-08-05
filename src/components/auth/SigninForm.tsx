@@ -43,7 +43,7 @@ export default function SigninForm({ onSuccess, onSwitchToSignup }: SigninFormPr
           <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
             <span className="text-3xl">🍳</span>
           </div>
-          <p className="text-gray-600">最小の作業で最高の美味しさと健康を</p>
+          <p className="text-gray-600">最小作業で、最高の美味しさを</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -61,7 +61,7 @@ export default function SigninForm({ onSuccess, onSwitchToSignup }: SigninFormPr
               value={credentials.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500"
               placeholder="your@email.com"
             />
           </div>
@@ -80,7 +80,7 @@ export default function SigninForm({ onSuccess, onSwitchToSignup }: SigninFormPr
               value={credentials.password}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500"
               placeholder="パスワードを入力してください"
             />
           </div>
