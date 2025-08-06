@@ -22,7 +22,7 @@ export default function SigninForm({ onSuccess, onSwitchToSignup }: SigninFormPr
     setError(null);
 
     try {
-      await authClient.signin(credentials);
+      await authClient.login(credentials);
       onSuccess?.();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'サインインに失敗しました');
@@ -61,7 +61,7 @@ export default function SigninForm({ onSuccess, onSwitchToSignup }: SigninFormPr
               value={credentials.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500 text-gray-600"
               placeholder="your@email.com"
             />
           </div>
@@ -80,7 +80,7 @@ export default function SigninForm({ onSuccess, onSwitchToSignup }: SigninFormPr
               value={credentials.password}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500 text-gray-600"
               placeholder="パスワードを入力してください"
             />
           </div>
@@ -105,7 +105,7 @@ export default function SigninForm({ onSuccess, onSwitchToSignup }: SigninFormPr
                 サインイン中...
               </div>
             ) : (
-              "🍽️ サインイン"
+              "サインイン"
             )}
           </button>
         </form>
