@@ -10,7 +10,6 @@ interface SignupFormProps {
 
 export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormProps) {
   const [credentials, setCredentials] = useState<SignupCredentials>({
-    name: '',
     email: '',
     password: '',
     passwordConfirmation: '',
@@ -30,7 +29,7 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
     }
 
     try {
-      await authClient.signup(credentials);
+      await authClient.register(credentials);
       onSuccess?.();
     } catch (err) {
       setError(err instanceof Error ? err.message : '新規登録に失敗しました');
@@ -56,22 +55,6 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-              お名前
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={credentials.name}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500"
-              placeholder="田中太郎"
-            />
-          </div>
-
-          <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
               メールアドレス
             </label>
@@ -82,7 +65,7 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
               value={credentials.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500 text-gray-600"
               placeholder="your@email.com"
             />
           </div>
@@ -99,7 +82,7 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
               onChange={handleChange}
               required
               minLength={6}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500 text-gray-600"
               placeholder="6文字以上で入力してください"
             />
           </div>
@@ -116,7 +99,7 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
               onChange={handleChange}
               required
               minLength={6}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500 text-gray-600"
               placeholder="パスワードを再入力してください"
             />
           </div>
@@ -141,7 +124,7 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
                 登録中...
               </div>
             ) : (
-              '🎉 新規登録'
+              '新規登録'
             )}
           </button>
         </form>
