@@ -3,6 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* 卵かけご飯テーマカラー */
+  --egg-yolk: #eab308;         /* 卵黄色 - メインカラー */
+  --egg-yolk-light: #fef3c7;  /* 薄い卵黄色 - 背景 */
+  --egg-yolk-lighter: #fffbeb; /* 極薄い卵黄色 - カード背景 */
+  --egg-yolk-dark: #d97706;   /* 濃い卵黄色 - ホバー */
+  --rice-white: #ffffff;       /* 白いご飯色 */
+  --bowl-gray: #4b5563;        /* お茶碗色 - アクセント */
+  --soy-sauce: #d97706;        /* 醤油色 - アンバー系 */
+  --soy-sauce-light: #fef3c7; /* 薄い醤油色 */
 }
 
 @theme inline {
@@ -10,6 +20,16 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* カスタムカラーパレット */
+  --color-primary: var(--egg-yolk);
+  --color-primary-light: var(--egg-yolk-light);
+  --color-primary-lighter: var(--egg-yolk-lighter);
+  --color-primary-dark: var(--egg-yolk-dark);
+  --color-surface: var(--rice-white);
+  --color-accent: var(--bowl-gray);
+  --color-secondary: var(--soy-sauce);
+  --color-secondary-light: var(--soy-sauce-light);
 }
 
 @media (prefers-color-scheme: dark) {
