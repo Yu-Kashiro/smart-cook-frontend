@@ -15,7 +15,7 @@ interface UserData {
   updated_at: string;
 }
 
-interface ApiResponse<T = any> {
+interface ApiResponse<T = unknown> {
   success: boolean;
   data?: T;
   message: string;
