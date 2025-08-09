@@ -45,12 +45,12 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <div className="bg-white rounded-2xl shadow-xl p-8 border border-orange-100">
+      <div className="bg-white rounded-2xl shadow-xl p-8 border border-primary-light">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-lighter rounded-full mb-4">
             <span className="text-3xl">👨‍🍳</span>
           </div>
-          <p className="text-gray-600">最小作業で、最高の美味しさを</p>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">Smart Cook 新規登録</h2>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -65,7 +65,7 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
               value={credentials.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500 text-gray-600"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200 outline-none placeholder:text-gray-500 text-gray-600"
               placeholder="your@email.com"
             />
           </div>
@@ -82,14 +82,14 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
               onChange={handleChange}
               required
               minLength={6}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500 text-gray-600"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200 outline-none placeholder:text-gray-500 text-gray-600"
               placeholder="6文字以上で入力してください"
             />
           </div>
 
           <div>
             <label htmlFor="passwordConfirmation" className="block text-sm font-medium text-gray-700 mb-2">
-              パスワード確認
+              パスワード再確認
             </label>
             <input
               type="password"
@@ -99,7 +99,7 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
               onChange={handleChange}
               required
               minLength={6}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 outline-none placeholder:text-gray-500 text-gray-600"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200 outline-none placeholder:text-gray-500 text-gray-600"
               placeholder="パスワードを再入力してください"
             />
           </div>
@@ -116,7 +116,7 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-orange-600 hover:to-red-600 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-[1.02]"
+            className="w-full bg-primary text-white font-semibold py-3 px-4 rounded-lg hover:bg-primary-dark focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-[1.02]"
           >
             {isLoading ? (
               <div className="flex items-center justify-center">
@@ -134,7 +134,7 @@ export default function SignupForm({ onSuccess, onSwitchToSignin }: SignupFormPr
             すでにアカウントをお持ちの方は
             <button
               onClick={onSwitchToSignin}
-              className="text-orange-600 hover:text-orange-700 font-medium ml-1 underline underline-offset-2"
+              className="text-primary hover:text-primary-dark font-medium ml-1 underline underline-offset-2"
             >
               サインイン
             </button>
